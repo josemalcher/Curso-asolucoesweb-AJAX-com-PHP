@@ -1,0 +1,14 @@
+{
+  "name": "josemalcher/workspace-curso-asolucoesweb-ajax-com-php",
+  "authors": [
+    {
+      "name": "José Stélio R. Malcher Junior",
+      "email": "contato@josemalcher.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "app"
+    }
+  }
+}

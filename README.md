@@ -32,140 +32,169 @@ https://www.asolucoesweb.com.br/detalhes/curso-ajax-com-php
 
 ---
 
-## <a name="parte1"></a>
+## <a name="parte1">01 - Configuração básica </a>
+
+terminal: composer init
+
+- composer.json
+```json
+{
+  "name": "josemalcher/workspace-curso-asolucoesweb-ajax-com-php",
+  "authors": [
+    {
+      "name": "José Stélio R. Malcher Junior",
+      "email": "contato@josemalcher.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "app"
+    }
+  }
+}
+
+```
+
+- config.php
+```php
+<?php
+require "vendor/autoload.php";
+```
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte2">02 - Estrutura básica do ajax </a>
+
+- https://developer.mozilla.org/pt-BR/docs/Web/Guide/AJAX
+
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte2"></a>
+## <a name="parte3">03 - Entendendo estrutura básica do ajax</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte3"></a>
+## <a name="parte4">04 - Conexão banco e model</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte4"></a>
+## <a name="parte5"> 05 - Listando users parte 1 </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte5"></a>
+## <a name="parte6">06 - Listando users parte 2</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte6"></a>
+## <a name="parte7">  07 - Loading </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte7"></a>
+## <a name="parte8">08 - Refatorando estrutura ajax </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte8"></a>
+## <a name="parte9">09 - Ajax refatorado</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte9"></a>
+## <a name="parte10">10 - Parâmetros GET</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte10"></a>
+## <a name="parte11">11 - Cadastrando com post parte 1 </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte11"></a>
+## <a name="parte12">12 - Cadastrando com post parte 2 </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte12"></a>
+## <a name="parte13">13 - Cadastrando com post parte 3</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte13"></a>
+## <a name="parte14">14 - Busca parte 1 </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte14"></a>
+## <a name="parte15">15 - Busca parte 2</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte15"></a>
+## <a name="parte16">16 - Estados e cidades parte 1 </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte16"></a>
+## <a name="parte17">17 - Estados e cidades parte 2 </a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte17"></a>
+## <a name="parte18">01 - Ajax com jquery e GET</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte18"></a>
+## <a name="parte19">02 - Ajax com jquery e POST</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte19"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-
-## <a name="parte20"></a>
+## <a name="parte20">03 - Ajax com jquery e função ajax </a>
 
 
 [Voltar ao Índice](#indice)
