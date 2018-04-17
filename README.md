@@ -69,7 +69,52 @@ require "vendor/autoload.php";
 
 - https://developer.mozilla.org/pt-BR/docs/Web/Guide/AJAX
 
+- public/assets/js/user.js
+```js
+window.onload = function () {
 
+    var btn_users = document.querySelector("#btn_users");
+    var xhttp = new XMLHttpRequest();
+    //console.log(xhttp);
+
+    btn_users.onclick = function () {
+        //console.log('teste');
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                console.log(xhttp.responseText);
+            }
+        };
+
+        xhttp.open('GET', 'ajax/user.php', true); // true = assincrona
+        xhttp.send();
+
+    };
+};
+```
+- public/ajax/user.php
+```php
+<?php
+echo "Teste dentro do PHP - USER.PHP";
+```
+
+- public/index.php
+
+```php
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso PHP com AJAX</title>
+</head>
+<body>
+<button id="btn_users">ChamarPHP</button>
+<script src="assets/js/user.js"></script>
+</body>
+</html>
+```
 
 [Voltar ao Índice](#indice)
 
