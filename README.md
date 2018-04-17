@@ -176,6 +176,59 @@ Teste dentro do PHP - USER.PHP
 
 ## <a name="parte4">04 - Conexão banco e model</a>
 
+- models/Connection.php
+```php
+<?php
+namespace app\models;
+
+use PDO;
+
+class Connection
+{
+    public static function connect()
+    {
+        $pdo = new PDO("mysql:host=localhost; dbname=escola", "root", "");
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); // pegar os dados como objetos
+        return $pdo;
+    }
+}
+```
+
+- models/model.pho.php
+```php
+<?php
+namespace app\models;
+
+abstract class Model
+{
+    private $connection;
+    public function __construct()
+    {
+        $this->connection = Connection::connect();
+    }
+
+    public function all()
+    {
+        $sql = "select * from {$this->table}";
+        $all = $this->connection->prepare($sql);
+        $all->execute();
+        return $all->fetchAll();
+    }
+}
+
+```
+
+- models/User.php
+```php
+<?php
+namespace app\models;
+
+
+class User extends  Model
+{
+    protected $table = 'aluno'; 
+}
+```
 
 [Voltar ao Índice](#indice)
 
