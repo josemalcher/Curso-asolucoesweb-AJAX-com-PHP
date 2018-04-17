@@ -8,7 +8,10 @@
     <title>Curso PHP com AJAX</title>
 </head>
 <body>
-<button id="btn_users">ChamarPHP</button>
+<button id="btn_users">Usuários</button>
+
+<div id="div_user"></div>
+
 <script src="assets/js/user.js"></script>
 </body>
 </html>

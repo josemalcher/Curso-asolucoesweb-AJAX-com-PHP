@@ -236,6 +236,47 @@ class User extends  Model
 
 ## <a name="parte5"> 05 - Listando users parte 1 </a>
 
+- public/assets/js/user.js
+
+```js
+window.onload = function () {
+
+    var btn_users = document.querySelector("#btn_users");
+    var div_user = document.querySelector("#div_user");
+    var xhttp = new XMLHttpRequest();
+
+    btn_users.onclick = function () {
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                var users = JSON.parse(this.responseText);
+                console.log(users);
+
+            }
+        };/*fim onreadystatechange*/
+
+        xhttp.open('GET', 'ajax/user.php', true);
+        xhttp.send();
+    };/*fim onclick */
+
+};
+```
+
+- public/ajax/user.php
+
+```php
+<?php
+
+require "../../config.php";
+
+use app\models\User;
+
+$user = new User;
+//var_dump($user->all());
+echo  json_encode($user->all(),JSON_INVALID_UTF8_SUBSTITUTE);
+
+```
+
 
 [Voltar ao Índice](#indice)
 
