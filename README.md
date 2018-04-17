@@ -284,6 +284,73 @@ echo  json_encode($user->all(),JSON_INVALID_UTF8_SUBSTITUTE);
 
 ## <a name="parte6">06 - Listando users parte 2</a>
 
+- public/assets/js/user.js
+
+```js
+window.onload = function () {
+
+    var btn_users = document.querySelector("#btn_users");
+    var div_user = document.querySelector("#div_user");
+    var xhttp = new XMLHttpRequest();
+
+    btn_users.onclick = function () {
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                var users = JSON.parse(this.responseText);
+                //console.log(users);
+
+                var table = `<table class="table table-striped">`; // usando crase ECS 6
+                table+= `<thead><tr><td>ID</td><td>Nome</td><td>email</td></tr></thead>`;
+                table+= `<tbody>`;
+                    users.forEach(function (user) {
+                        table+= `<tr>`;
+                        table+= `<td> ${user.id} </td>`;
+                        table+= `<td> ${user.nome} </td>`;
+                        table+= `<td> ${user.email} </td>`;
+                        table+= `</tr>`;
+                    });
+                table+= `</tbody>`;
+                div_user.innerHTML = table;
+
+            }
+        };/*fim onreadystatechange*/
+
+        xhttp.open('GET', 'ajax/user.php', true);
+        xhttp.send();
+    };/*fim onclick */
+
+};
+```
+
+- public/index.php
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso PHP com AJAX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <button class="btn btn-larger" id="btn_users">Usuários</button>
+
+        <div id="div_user"></div>
+    </div>
+</div>
+
+
+<script src="assets/js/user.js"></script>
+</body>
+</html>
+```
+
 
 [Voltar ao Índice](#indice)
 

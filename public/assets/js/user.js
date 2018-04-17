@@ -9,7 +9,20 @@ window.onload = function () {
             if (this.readyState == 4 && this.status == 200) {
 
                 var users = JSON.parse(this.responseText);
-                console.log(users);
+                //console.log(users);
+
+                var table = `<table class="table table-striped">`; // usando crase ECS 6
+                table+= `<thead><tr><td>ID</td><td>Nome</td><td>email</td></tr></thead>`;
+                table+= `<tbody>`;
+                    users.forEach(function (user) {
+                        table+= `<tr>`;
+                        table+= `<td> ${user.id} </td>`;
+                        table+= `<td> ${user.nome} </td>`;
+                        table+= `<td> ${user.email} </td>`;
+                        table+= `</tr>`;
+                    });
+                table+= `</tbody>`;
+                div_user.innerHTML = table;
 
             }
         };/*fim onreadystatechange*/
